@@ -6,11 +6,12 @@ import EventCard from "../component/EventCard";
 
 const Events = () => {
   const [isopen, setIsOpen] = useState(false);
+  const handleclick = (e)=>{
+    console.log(e)
+  }
   return (
     <div className="event-page">
-      <div className={`${isopen ? "show" : "hide"} event-info`}>
-        <h1 className="title">hey</h1>
-      </div>
+ 
       <Nav />
       <div className="event-container">
         {EventDetails.map((EachDept) => {
@@ -26,6 +27,7 @@ const Events = () => {
                       key={EachEvent.id}
                       {...EachEvent}
                       setIsOpen={setIsOpen}
+                      
                     />
                   );
                 })}
